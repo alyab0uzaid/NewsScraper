@@ -2,15 +2,16 @@ import sys
 import os
 from openai import OpenAI
 
-client = OpenAI(api_key="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")
+
+# Initialize the OpenAI client with your API key
+client = OpenAI(api_key="INSERT_YOUR_API_KEY_HERE")
 from urllib.parse import quote
 from modules.Module_1.scraping import fetch_html
 from modules.Module_2.processing import parse_article
 
-# Initialize the OpenAI client with your API key
 
 def save_summarized_data(article_info, summary, url):
-    filename = quote(url, safe='')[7:200]  # Strip 'http://' and limit length
+    filename = article_info['title'] 
     filename += "_summarized.txt"
     processed_path = os.path.join('Data', 'processed', filename)
 
@@ -33,7 +34,7 @@ def main(url):
         prompt = f"Summarize the following article in 50 words:\n\n{article_info['content']}"
 
         try:
-            response = client.chat.completions.create(model="gpt-3.5-turbo",  # Use an appropriate model for your task
+            response = client.chat.completions.create(model="gpt-3.5-turbo",  
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": prompt}
