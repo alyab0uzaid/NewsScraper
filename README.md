@@ -38,7 +38,10 @@ client = OpenAI(api_key="INSERT_YOUR_API_KEY_HERE")
 Replace "INSERT_YOUR_API_KEY_HERE" with your actual OpenAI API key, enclosed in quotes.
 
 ## 3.Running the Application
+If you're running your script through an IDE (Integrated Development Environment) like PyCharm, Visual Studio Code, or Jupyter notebook, ensure the IDE is set to use the Python interpreter from your the activated 'myopenaienv' environment.
+
 To run the project and summarize an article, use the command:
+
 ```console
 python run.py <article-url>
 ```
