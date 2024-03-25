@@ -27,7 +27,7 @@ conda activate myopenaienv
 ```
 
 ## 2. Setting Up the OpenAI API Key
-1. Visit the OpenAI API page and log in or sign up for an account.
+1. Visit the OpenAI API page: https://openai.com/blog/openai-api and log in or sign up for an account.
 2. Once logged in, navigate to the API keys section of your account dashboard on the left side of the page.
 3. Click on the " + Create new secret key" button to generate a new key.
 4. Copy the generated API key for use in the next step.
